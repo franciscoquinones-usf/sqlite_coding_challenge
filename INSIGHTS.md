@@ -1,0 +1,1 @@
+5–10 bullet points summarizing what your results mean (e.g., “Category X contributes ~Y% of revenue”).
