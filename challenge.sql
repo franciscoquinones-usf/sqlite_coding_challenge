@@ -36,3 +36,10 @@ WHERE e.salary > dept.avg_salary
 ORDER BY d.name, e.salary DESC;
 
 -- Task 4: Cities with the Most Loyal Customers
+SELECT city,
+    SUM(CASE WHEN loyalty_level = 'Gold' THEN 1 ELSE 0 END) AS gold_count,
+    SUM(CASE WHEN loyalty_level = 'Silver' THEN 1 ELSE 0 END) AS silver_count,
+    SUM(CASE WHEN loyalty_level = 'Bronze' THEN 1 ELSE 0 END) AS bronze_count
+FROM customers
+GROUP BY city
+ORDER BY gold_count DESC, silver_count DESC, bronze_count DESC, city;
